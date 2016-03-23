@@ -15,9 +15,9 @@ import Bluetooth.Raw.Hci
 #ccall sdp_list_remove , Ptr <struct _sdp_list> -> Ptr () -> IO (Ptr <struct _sdp_list>)
 #ccall sdp_list_insert_sorted , Ptr <struct _sdp_list> -> Ptr () -> <sdp_comp_func_t> -> IO (Ptr <struct _sdp_list>)
 #ccall sdp_list_free , Ptr <struct _sdp_list> -> <sdp_free_func_t> -> IO ()
-#cinline sdp_list_len , Ptr <struct _sdp_list> -> IO CInt
-#cinline sdp_list_find , Ptr <struct _sdp_list> -> Ptr () -> <sdp_comp_func_t> -> IO (Ptr <struct _sdp_list>)
-#cinline sdp_list_foreach , Ptr <struct _sdp_list> -> <sdp_list_func_t> -> Ptr () -> IO ()
+{- #cinline sdp_list_len , Ptr <struct _sdp_list> -> IO CInt -}
+{- #cinline sdp_list_find , Ptr <struct _sdp_list> -> Ptr () -> <sdp_comp_func_t> -> IO (Ptr <struct _sdp_list>) -}
+{- #cinline sdp_list_foreach , Ptr <struct _sdp_list> -> <sdp_list_func_t> -> Ptr () -> IO () -}
 {- typedef struct {
             int sock;
             int state;
@@ -69,19 +69,19 @@ import Bluetooth.Raw.Hci
 #ccall sdp_get_uuidseq_attr , Ptr <sdp_record_t> -> CUShort -> Ptr (Ptr <struct _sdp_list>) -> IO CInt
 #ccall sdp_attr_add_new , Ptr <sdp_record_t> -> CUShort -> CUChar -> Ptr () -> IO CInt
 #ccall sdp_set_info_attr , Ptr <sdp_record_t> -> CString -> CString -> CString -> IO ()
-#cinline sdp_set_service_classes , Ptr <sdp_record_t> -> Ptr <struct _sdp_list> -> IO CInt
-#cinline sdp_get_service_classes , Ptr <sdp_record_t> -> Ptr (Ptr <struct _sdp_list>) -> IO CInt
-#cinline sdp_set_browse_groups , Ptr <sdp_record_t> -> Ptr <struct _sdp_list> -> IO CInt
+{- #cinline sdp_set_service_classes , Ptr <sdp_record_t> -> Ptr <struct _sdp_list> -> IO CInt -}
+{- #cinline sdp_get_service_classes , Ptr <sdp_record_t> -> Ptr (Ptr <struct _sdp_list>) -> IO CInt -}
+{- #cinline sdp_set_browse_groups , Ptr <sdp_record_t> -> Ptr <struct _sdp_list> -> IO CInt -}
 #ccall sdp_set_access_protos , Ptr <sdp_record_t> -> Ptr <struct _sdp_list> -> IO CInt
 #ccall sdp_set_add_access_protos , Ptr <sdp_record_t> -> Ptr <struct _sdp_list> -> IO CInt
 #ccall sdp_get_proto_port , Ptr <struct _sdp_list> -> CInt -> IO CInt
 #ccall sdp_get_proto_desc , Ptr <struct _sdp_list> -> CInt -> IO (Ptr <struct sdp_data_struct>)
 #ccall sdp_set_lang_attr , Ptr <sdp_record_t> -> Ptr <struct _sdp_list> -> IO CInt
-#cinline sdp_set_service_ttl , Ptr <sdp_record_t> -> CUInt -> IO CInt
-#cinline sdp_set_record_state , Ptr <sdp_record_t> -> CUInt -> IO CInt
+{- #cinline sdp_set_service_ttl , Ptr <sdp_record_t> -> CUInt -> IO CInt -}
+{- #cinline sdp_set_record_state , Ptr <sdp_record_t> -> CUInt -> IO CInt -}
 {- #ccall sdp_set_service_id , Ptr <sdp_record_t> -> <uuid_t> -> IO () -}
 {- #ccall sdp_set_group_id , Ptr <sdp_record_t> -> <uuid_t> -> IO () -}
-#cinline sdp_set_service_avail , Ptr <sdp_record_t> -> CUChar -> IO CInt
+{- #cinline sdp_set_service_avail , Ptr <sdp_record_t> -> CUChar -> IO CInt -}
 #ccall sdp_set_profile_descs , Ptr <sdp_record_t> -> Ptr <struct _sdp_list> -> IO CInt
 #ccall sdp_set_url_attr , Ptr <sdp_record_t> -> CString -> CString -> CString -> IO ()
 #ccall sdp_service_search_req , Ptr <sdp_session_t> -> Ptr <struct _sdp_list> -> CUShort -> Ptr (Ptr <struct _sdp_list>) -> IO CInt
@@ -111,14 +111,14 @@ import Bluetooth.Raw.Hci
 #ccall sdp_uuid128_to_uuid , Ptr <uuid_t> -> IO CInt
 #ccall sdp_uuid_to_proto , Ptr <uuid_t> -> IO CInt
 #ccall sdp_uuid_extract , Ptr CUChar -> CInt -> Ptr <uuid_t> -> Ptr CInt -> IO CInt
-#ccall sdp_uuid_print , Ptr <uuid_t> -> IO ()
+{- #ccall sdp_uuid_print , Ptr <uuid_t> -> IO () -}
 #ccall sdp_uuid2strn , Ptr <uuid_t> -> CString -> CSize -> IO CInt
 #ccall sdp_proto_uuid2strn , Ptr <uuid_t> -> CString -> CSize -> IO CInt
 #ccall sdp_svclass_uuid2strn , Ptr <uuid_t> -> CString -> CSize -> IO CInt
 #ccall sdp_profile_uuid2strn , Ptr <uuid_t> -> CString -> CSize -> IO CInt
 #ccall sdp_get_access_protos , Ptr <sdp_record_t> -> Ptr (Ptr <struct _sdp_list>) -> IO CInt
 #ccall sdp_get_add_access_protos , Ptr <sdp_record_t> -> Ptr (Ptr <struct _sdp_list>) -> IO CInt
-#cinline sdp_get_browse_groups , Ptr <sdp_record_t> -> Ptr (Ptr <struct _sdp_list>) -> IO CInt
+{- #cinline sdp_get_browse_groups , Ptr <sdp_record_t> -> Ptr (Ptr <struct _sdp_list>) -> IO CInt -}
 #ccall sdp_get_lang_attr , Ptr <sdp_record_t> -> Ptr (Ptr <struct _sdp_list>) -> IO CInt
 #ccall sdp_get_profile_descs , Ptr <sdp_record_t> -> Ptr (Ptr <struct _sdp_list>) -> IO CInt
 #ccall sdp_get_server_ver , Ptr <sdp_record_t> -> Ptr (Ptr <struct _sdp_list>) -> IO CInt
@@ -128,18 +128,18 @@ import Bluetooth.Raw.Hci
 #ccall sdp_get_service_avail , Ptr <sdp_record_t> -> Ptr CUChar -> IO CInt
 #ccall sdp_get_service_ttl , Ptr <sdp_record_t> -> Ptr CUInt -> IO CInt
 #ccall sdp_get_database_state , Ptr <sdp_record_t> -> Ptr CUInt -> IO CInt
-#cinline sdp_get_service_name , Ptr <sdp_record_t> -> CString -> CInt -> IO CInt
-#cinline sdp_get_service_desc , Ptr <sdp_record_t> -> CString -> CInt -> IO CInt
-#cinline sdp_get_provider_name , Ptr <sdp_record_t> -> CString -> CInt -> IO CInt
-#cinline sdp_get_doc_url , Ptr <sdp_record_t> -> CString -> CInt -> IO CInt
-#cinline sdp_get_clnt_exec_url , Ptr <sdp_record_t> -> CString -> CInt -> IO CInt
-#cinline sdp_get_icon_url , Ptr <sdp_record_t> -> CString -> CInt -> IO CInt
+{- #cinline sdp_get_service_name , Ptr <sdp_record_t> -> CString -> CInt -> IO CInt -}
+{- #cinline sdp_get_service_desc , Ptr <sdp_record_t> -> CString -> CInt -> IO CInt -}
+{- #cinline sdp_get_provider_name , Ptr <sdp_record_t> -> CString -> CInt -> IO CInt -}
+{- #cinline sdp_get_doc_url , Ptr <sdp_record_t> -> CString -> CInt -> IO CInt -}
+{- #cinline sdp_get_clnt_exec_url , Ptr <sdp_record_t> -> CString -> CInt -> IO CInt -}
+{- #cinline sdp_get_icon_url , Ptr <sdp_record_t> -> CString -> CInt -> IO CInt -}
 #ccall sdp_set_supp_feat , Ptr <sdp_record_t> -> Ptr <struct _sdp_list> -> IO CInt
 #ccall sdp_get_supp_feat , Ptr <sdp_record_t> -> Ptr (Ptr <struct _sdp_list>) -> IO CInt
 #ccall sdp_extract_pdu , Ptr CUChar -> CInt -> Ptr CInt -> IO (Ptr <sdp_record_t>)
 #ccall sdp_copy_record , Ptr <sdp_record_t> -> IO (Ptr <sdp_record_t>)
-#ccall sdp_data_print , Ptr <struct sdp_data_struct> -> IO ()
-#ccall sdp_print_service_attr , Ptr <struct _sdp_list> -> IO ()
+{- #ccall sdp_data_print , Ptr <struct sdp_data_struct> -> IO () -}
+{- #ccall sdp_print_service_attr , Ptr <struct _sdp_list> -> IO () -}
 #ccall sdp_attrid_comp_func , Ptr () -> Ptr () -> IO CInt
 #ccall sdp_set_seq_len , Ptr CUChar -> CUInt -> IO ()
 #ccall sdp_set_attrid , Ptr <sdp_buf_t> -> CUShort -> IO ()

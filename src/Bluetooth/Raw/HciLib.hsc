@@ -140,18 +140,18 @@ import Bluetooth.Raw.Hci
 #ccall pal_vertostr , CUInt -> IO CString
 #ccall pal_strtover , CString -> Ptr CUInt -> IO CInt
 #ccall lmp_featurestostr , Ptr CUChar -> CString -> CInt -> IO CString
-#cinline hci_set_bit , CInt -> Ptr () -> IO ()
-#cinline hci_clear_bit , CInt -> Ptr () -> IO ()
-#cinline hci_test_bit , CInt -> Ptr () -> IO CInt
-#cinline hci_filter_clear , Ptr <struct hci_filter> -> IO ()
-#cinline hci_filter_set_ptype , CInt -> Ptr <struct hci_filter> -> IO ()
-#cinline hci_filter_clear_ptype , CInt -> Ptr <struct hci_filter> -> IO ()
-#cinline hci_filter_test_ptype , CInt -> Ptr <struct hci_filter> -> IO CInt
-#cinline hci_filter_all_ptypes , Ptr <struct hci_filter> -> IO ()
-#cinline hci_filter_set_event , CInt -> Ptr <struct hci_filter> -> IO ()
-#cinline hci_filter_clear_event , CInt -> Ptr <struct hci_filter> -> IO ()
-#cinline hci_filter_test_event , CInt -> Ptr <struct hci_filter> -> IO CInt
-#cinline hci_filter_all_events , Ptr <struct hci_filter> -> IO ()
-#cinline hci_filter_set_opcode , CInt -> Ptr <struct hci_filter> -> IO ()
-#cinline hci_filter_clear_opcode , Ptr <struct hci_filter> -> IO ()
-#cinline hci_filter_test_opcode , CInt -> Ptr <struct hci_filter> -> IO CInt
+{- #cinline hci_set_bit , CInt -> Ptr () -> IO () -}
+{- #cinline hci_clear_bit , CInt -> Ptr () -> IO () -}
+{- #cinline hci_test_bit , CInt -> Ptr () -> IO CInt -}
+{- #cinline hci_filter_clear , Ptr <struct hci_filter> -> IO () -}
+{- #cinline hci_filter_set_ptype , CInt -> Ptr <struct hci_filter> -> IO () -}
+{- #cinline hci_filter_clear_ptype , CInt -> Ptr <struct hci_filter> -> IO () -}
+{- #cinline hci_filter_test_ptype , CInt -> Ptr <struct hci_filter> -> IO CInt -}
+{- #cinline hci_filter_all_ptypes , Ptr <struct hci_filter> -> IO () -}
+{- #cinline hci_filter_set_event , CInt -> Ptr <struct hci_filter> -> IO () -}
+{- #cinline hci_filter_clear_event , CInt -> Ptr <struct hci_filter> -> IO () -}
+{- #cinline hci_filter_test_event , CInt -> Ptr <struct hci_filter> -> IO CInt -}
+{- #cinline hci_filter_all_events , Ptr <struct hci_filter> -> IO () -}
+{- #cinline hci_filter_set_opcode , CInt -> Ptr <struct hci_filter> -> IO () -}
+{- #cinline hci_filter_clear_opcode , Ptr <struct hci_filter> -> IO () -}
+{- #cinline hci_filter_test_opcode , CInt -> Ptr <struct hci_filter> -> IO CInt -}

@@ -44,26 +44,26 @@ import Foreign.Ptr
 #num BT_CONFIG
 #num BT_DISCONN
 #num BT_CLOSED
-#cinline bt_get_le64 , Ptr () -> IO CULong
-#cinline bt_get_be64 , Ptr () -> IO CULong
-#cinline bt_get_le32 , Ptr () -> IO CUInt
-#cinline bt_get_be32 , Ptr () -> IO CUInt
-#cinline bt_get_le16 , Ptr () -> IO CUShort
-#cinline bt_get_be16 , Ptr () -> IO CUShort
-#cinline bt_put_le64 , CULong -> Ptr () -> IO ()
-#cinline bt_put_be64 , CULong -> Ptr () -> IO ()
-#cinline bt_put_le32 , CUInt -> Ptr () -> IO ()
-#cinline bt_put_be32 , CUInt -> Ptr () -> IO ()
-#cinline bt_put_le16 , CUShort -> Ptr () -> IO ()
-#cinline bt_put_be16 , CUShort -> Ptr () -> IO ()
+{- #cinline bt_get_le64 , Ptr () -> IO CULong -}
+{- #cinline bt_get_be64 , Ptr () -> IO CULong -}
+{- #cinline bt_get_le32 , Ptr () -> IO CUInt -}
+{- #cinline bt_get_be32 , Ptr () -> IO CUInt -}
+{- #cinline bt_get_le16 , Ptr () -> IO CUShort -}
+{- #cinline bt_get_be16 , Ptr () -> IO CUShort -}
+{- #cinline bt_put_le64 , CULong -> Ptr () -> IO () -}
+{- #cinline bt_put_be64 , CULong -> Ptr () -> IO () -}
+{- #cinline bt_put_le32 , CUInt -> Ptr () -> IO () -}
+{- #cinline bt_put_be32 , CUInt -> Ptr () -> IO () -}
+{- #cinline bt_put_le16 , CUShort -> Ptr () -> IO () -}
+{- #cinline bt_put_be16 , CUShort -> Ptr () -> IO () -}
 {- typedef struct __attribute__((packed)) {
             uint8_t b[6];
         } bdaddr_t; -}
 #starttype bdaddr_t
 #array_field b , CUChar
 #stoptype
-#cinline bacmp , Ptr <bdaddr_t> -> Ptr <bdaddr_t> -> IO CInt
-#cinline bacpy , Ptr <bdaddr_t> -> Ptr <bdaddr_t> -> IO ()
+{- #cinline bacmp , Ptr <bdaddr_t> -> Ptr <bdaddr_t> -> IO CInt -}
+{- #cinline bacpy , Ptr <bdaddr_t> -> Ptr <bdaddr_t> -> IO () -}
 #ccall baswap , Ptr <bdaddr_t> -> Ptr <bdaddr_t> -> IO ()
 #ccall strtoba , CString -> IO (Ptr <bdaddr_t>)
 #ccall batostr , Ptr <bdaddr_t> -> IO CString
@@ -85,7 +85,7 @@ import Foreign.Ptr
 #starttype uint128_t
 #array_field data , CUChar
 #stoptype
-#cinline bswap_128 , Ptr () -> Ptr () -> IO ()
-#cinline ntoh64 , CULong -> IO CULong
-#cinline ntoh128 , Ptr <uint128_t> -> Ptr <uint128_t> -> IO ()
-#cinline btoh128 , Ptr <uint128_t> -> Ptr <uint128_t> -> IO ()
+{- #cinline bswap_128 , Ptr () -> Ptr () -> IO () -}
+{- #cinline ntoh64 , CULong -> IO CULong -}
+{- #cinline ntoh128 , Ptr <uint128_t> -> Ptr <uint128_t> -> IO () -}
+{- #cinline btoh128 , Ptr <uint128_t> -> Ptr <uint128_t> -> IO () -}

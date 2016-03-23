@@ -31,6 +31,7 @@ import Bluetooth.Raw.Bluetooth
 }; -}
 #num LE_PUBLIC_ADDRESS
 #num LE_RANDOM_ADDRESS
+#num IREQ_CACHE_FLUSH
 {- typedef struct __attribute__((packed)) {
             uint8_t lap[3]; uint8_t length; uint8_t num_rsp;
         } inquiry_cp; -}

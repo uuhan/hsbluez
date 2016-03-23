@@ -34,3 +34,10 @@ library
   build-depends:       base >=4.8 && <4.9
                      , bindings-DSL
   default-language:    Haskell2010
+
+executable bscan
+  hs-source-dirs:      src
+  main-is:             scan.hs
+  default-language:    Haskell2010
+  build-depends:       base 
+                     , bluez
