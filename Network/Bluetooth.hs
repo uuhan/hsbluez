@@ -1,5 +1,5 @@
 {-# LANGUAGE TupleSections #-}
-module Bluetooth where
+module Network.Bluetooth where
 
 import           Bluetooth.Raw.Hci
 import           Bluetooth.Raw.HciLib

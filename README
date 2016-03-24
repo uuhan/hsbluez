@@ -1,0 +1,11 @@
+
+cabal build
+cabal run
+
+如果build报错了，自行排错，并修改对应src0文件下的文件,然后
+cabal clean
+cabal configure -fbootstrap
+cabal build
+cabal run
+
+** bluez-5.37 测试

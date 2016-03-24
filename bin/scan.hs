@@ -15,7 +15,7 @@ import           Bluetooth.Raw.Bluetooth
 import           Control.Concurrent
 import           Control.Monad
 
-import           Bluetooth
+import           Network.Bluetooth
 
 catchIt io = do
     throwErrnoIfMinus1 "异常" io
@@ -26,7 +26,7 @@ main = do
     (num, dongle) <- hciInquiry dev 1
     go dev dongle
   where
-    go did [] = putStrLn "Finished"
+    go did [] = return ()
     go did (x:xs) = do
         alloca $ \addr -> do
             c'ba2str (p'inquiry_info'bdaddr x) addr
