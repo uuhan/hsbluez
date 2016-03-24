@@ -12,6 +12,8 @@ category:            System
 build-type:          Simple
 extra-source-files:  
     include/*.h
+    src/Bluetooth/Raw/*.hs
+    src/Bluetooth/Raw/*.h
     README
 cabal-version:       >=1.10
 
