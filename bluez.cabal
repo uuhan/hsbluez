@@ -20,6 +20,7 @@ library
   hs-source-dirs:      src
   include-dirs:        include
   exposed-modules:     
+            Bluetooth
             Bluetooth.Raw.Bluetooth
             Bluetooth.Raw.Bnep
             Bluetooth.Raw.Cmtp
@@ -34,10 +35,13 @@ library
   build-depends:       base >=4.8 && <4.9
                      , bindings-DSL
   default-language:    Haskell2010
+  extra-libraries:     bluetooth
 
 executable bscan
-  hs-source-dirs:      src
+  hs-source-dirs:      bin
+  c-sources:           cbits/scan.c
   main-is:             scan.hs
   default-language:    Haskell2010
   build-depends:       base 
                      , bluez
+  extra-libraries:     bluetooth
